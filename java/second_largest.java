@@ -16,15 +16,15 @@ public class Main {
     // Approach 1 o(n)
     private static int process1(int[] nums)
     {
-        int large = Integer.MIN_VALUE;
-        int sec = Integer.MIN_VALUE;
+        int large= Integer.MIN_VALUE;
+        int sec= Integer.MIN_VALUE;
 
         for (int num : nums) {
-            if (num > large) {
-                sec = large;
-                large = num;
+            if (num >large) {
+                sec= large;
+                large= num;
             } else if (num > sec && num != large) {
-                sec = num;
+                sec= num;
             }
         }
         return sec;
@@ -34,22 +34,22 @@ public class Main {
     // Approach my style o(n + k) 
     private static int process4(int[] nums)
     {
-        int max = 0;
+        int max= 0;
         for (int num : nums) {
             max = Math.max(max, num);
         }
-        int[] freq = new int[max + 1];
+        int[] freq =new int[max + 1];
         for (int num : nums) {
             freq[num]++;
         }
     
-        boolean foundLargest = false;
-        for (int i = max; i >= 0; i--) {
+        boolean found = false;
+        for (int i= max;i >= 0;i--) {
     
             if (freq[i] > 0) {
     
-                if (!foundLargest) {
-                    foundLargest = true;
+                if (!found) {
+                    found = true;
                 } else {
                     return i;
                 }
