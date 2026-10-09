@@ -7,3 +7,5 @@ function checkNumber(num) {
 }
 
 module.exports = checkNumber;
+
+// Number.isInteger(num)
